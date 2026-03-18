@@ -1,5 +1,15 @@
- 
-# College Quiz [Quizazu] - Android Client 📱
+<div align="center">
+  <img width="201" height="232" alt="Quizazu" src="https://github.com/user-attachments/assets/9fc465b9-da37-4954-9da7-b0cf8b38663c" />
+  <h1>Quizazu | College quiz mobile app</h1><div align="center">
+
+![Platform](https://img.shields.io/badge/Platform-Android-3DDC84?logo=android&logoColor=white)
+![Min SDK](https://img.shields.io/badge/Min%20SDK-31-3DDC84?logo=android&logoColor=white)
+![Java](https://img.shields.io/badge/Java-11-ED8B00?logo=openjdk&logoColor=white)
+![Real-Time](https://img.shields.io/badge/Real--Time-SignalR-512BD4?logo=microsoft&logoColor=white)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://choosealicense.com/licenses/mit/)
+</div>
+</div> 
+
 
 **Quizazu Android Client** is the mobile frontend for the **[College Quiz (Quizazu)](https://github.com/Lettulouz/CollegeQuiz)**. Designed as an interactive, real-time quiz platform, the client application enables synchronous participation in live quiz sessions, supports various question types, and real-time state management for competitive gameplay.
 
