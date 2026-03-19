@@ -37,8 +37,9 @@ As part of the broader Quizazu architecture which integrates a web client (React
 <img width="290" alt="Join game screen with code input and QR scanner" src="https://github.com/user-attachments/assets/d9c050ff-2c5d-4209-a9b9-005aeb07bf88" />
 
 <br> 
+&nbsp; 
 
-**Player gameplay screen (4 options)**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Player gameplay screen (6 options)**<br>
+**Player gameplay screen (4 options)**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Player gameplay screen (6 options)**<br>
 <img width="290" alt="Gameplay screen with 4 answer options" src="https://github.com/user-attachments/assets/1351a3bc-d28b-4192-9c58-3271a0b6dcb9" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img width="290" alt="Gameplay screen with 6 answer options" src="https://github.com/user-attachments/assets/6226d45c-4227-43fc-b0b2-1c7753a639cc" />
