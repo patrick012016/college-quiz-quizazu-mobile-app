@@ -5,6 +5,7 @@
 ![Platform](https://img.shields.io/badge/Platform-Android-3DDC84?logo=android&logoColor=white)
 ![Min SDK](https://img.shields.io/badge/Min%20SDK-31-3DDC84?logo=android&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-11-ED8B00?logo=openjdk&logoColor=white)
+![JWT](https://img.shields.io/badge/Auth-JWT-000000?logo=jsonwebtokens&logoColor=white)
 ![Real-Time](https://img.shields.io/badge/Real--Time-SignalR-512BD4?logo=microsoft&logoColor=white)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://choosealicense.com/licenses/mit/)
 </div>
@@ -16,9 +17,38 @@
 As part of the broader Quizazu architecture which integrates a web client (ReactJS/Razor) and a centralized backend service (ASP.NET C# MVC & WebAPI) - this repository contains the source code for the native Android application implemented in Java.
 
 
-##  Features
+## Table of contents
 
-* **Secure authentication & Auto-login:** Users log in via a REST API, utilizing JWT (JSON Web Tokens) to secure API calls and quiz room entries. The resulting token is securely stored locally to enable auto-login, bypassing the login screen on subsequent app launches.
+* [Features](#features)
+* [Gallery](#gallery)
+* [Built with](#built-with)
+* [Architecture & app flow](#architecture--app-flow)
+* [Prerequisites & setup](#prerequisites--setup)
+* [License](#license)
+
+## Gallery
+
+<div align="center">
+
+**Home screen** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+**Join screen**<br>
+<img width="290" alt="Quizazu home screen" src="https://github.com/user-attachments/assets/ea78d50f-43eb-43ac-a245-6c27244d7da3" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img width="290" alt="Join game screen with code input and QR scanner" src="https://github.com/user-attachments/assets/d9c050ff-2c5d-4209-a9b9-005aeb07bf88" />
+
+<br> 
+
+**Player gameplay screen (4 options)**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Player gameplay screen (6 options)**<br>
+<img width="290" alt="Gameplay screen with 4 answer options" src="https://github.com/user-attachments/assets/1351a3bc-d28b-4192-9c58-3271a0b6dcb9" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img width="290" alt="Gameplay screen with 6 answer options" src="https://github.com/user-attachments/assets/6226d45c-4227-43fc-b0b2-1c7753a639cc" />
+
+</div>
+
+
+## Features
+
+* **Secure authentication & auto-login:** Users log in via a REST API, utilizing JWT (JSON Web Tokens) to secure API calls and quiz room entries. The resulting token is securely stored locally to enable auto-login, bypassing the login screen on subsequent app launches.
 * **Real-time gameplay sync:** Powered by Microsoft SignalR for low-latency bidirectional communication. The app reacts instantly to server hubs like `onGame`, `onQuestionTimer`, `onCorrectAnswer`, and `onQuestionResult`.
 * **Dynamic game modes:** The app dynamically renders native UI fragments based on the incoming question type. Supported modes include:
     * `SINGLE_FOUR_ANSWERS` (4 Options)
@@ -28,7 +58,7 @@ As part of the broader Quizazu architecture which integrates a web client (React
     * `RANGE` (Range Slider Questions)
 
 * **Quick join via QR code:** Integrated with the `Quickie` library for fast lobby joining via camera.
-* **Live timers & Results:** Synchronized countdown timers and immediate visual feedback on correct/incorrect answers directly on the device.
+* **Live timers & results:** Synchronized countdown timers and immediate visual feedback on correct/incorrect answers directly on the device.
 
 ## Built with
 
@@ -38,14 +68,14 @@ As part of the broader Quizazu architecture which integrates a web client (React
 * **Android SDK:** Minimum SDK 31, Target SDK 33.
 * **AndroidX & Material Design:** For modern UI components (`ConstraintLayout`, `GridLayout`, `RangeSlider`, `CardView`).
 
-### 3rd party libraries
+### Third-party libraries
 
 * [**SignalR Client** (`com.microsoft.signalr:7.0.5`)](https://learn.microsoft.com/en-us/aspnet/core/signalr/java-client) - Full-duplex websocket communication for real-time game state updates.
 * [**OkHttp3** (`com.squareup.okhttp3:okhttp:4.10.0`)](https://square.github.io/okhttp/) - HTTP client for initial REST API handshakes and joining rooms.
 * [**Gson** (`com.google.code.gson:2.10.1`)](https://github.com/google/gson) - Serialization and deserialization of JSON web sockets payloads and DTOs.
 * [**Quickie** (`io.github.g00fy2.quickie-bundled:1.6.0`)](https://github.com/G00fY2/quickie) - High-performance QR code scanning for joining quizzes.
 
-## Architecture & App flow
+## Architecture & app flow
 
 The application flow is broken down into modular, core activities:
 
@@ -56,7 +86,7 @@ The application flow is broken down into modular, core activities:
 5. **`Quiz_Activity`**: The core gameplay engine. It listens to websocket events and dynamically injects the appropriate UI Fragments (e.g., `FourAnswersFragment`, `TrueFalseFragment`, `SliderFragment`) into its frame layouts depending on the `QuizDto` payload.
 6. **`ResultActivity`**: Shows scorecards with point gains and streaks between questions or at the end of the quiz, using `ResultDto` data.
 
-## Prerequisites & Setup
+## Prerequisites & setup
 
 To build and run this project, you will need:
 
