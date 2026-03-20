@@ -11,11 +11,8 @@
 </div>
 </div> 
 
-
-**Quizazu Android Client** is the mobile frontend for the **[College Quiz (Quizazu)](https://github.com/Lettulouz/CollegeQuiz)**. Designed as an interactive, real-time quiz platform, the client application enables synchronous participation in live quiz sessions, supports various question types, and real-time state management for competitive gameplay.
-
-As part of the broader Quizazu architecture which integrates a web client (ReactJS/Razor) and a centralized backend service (ASP.NET C# MVC & WebAPI) - this repository contains the source code for the native Android application implemented in Java.
-
+**Quizazu Android app** is the native mobile frontend for the **[College Quiz (Quizazu)](https://github.com/patrick012016/college-quiz-quizazu)** platform. Engineered for interactive, real-time competitive gameplay, the app leverages bi-directional communication to ensure ultra-low latency state synchronization and seamless participation in live quiz sessions.
+This repository houses the source code for the Java-based Android application. It serves as a core component of the broader Quizazu cross-platform ecosystem, alongside a React & Razor web client and a centralized ASP.NET WebAPI backend.
 
 ## Table of contents
 
@@ -63,7 +60,7 @@ As part of the broader Quizazu architecture which integrates a web client (React
 
 ## Built with
 
-### Core android
+### Core Android
 
 * **Java 11:** Main programming language.
 * **Android SDK:** Minimum SDK 31, Target SDK 33.
@@ -73,7 +70,7 @@ As part of the broader Quizazu architecture which integrates a web client (React
 
 * [**SignalR Client** (`com.microsoft.signalr:7.0.5`)](https://learn.microsoft.com/en-us/aspnet/core/signalr/java-client) - Full-duplex websocket communication for real-time game state updates.
 * [**OkHttp3** (`com.squareup.okhttp3:okhttp:4.10.0`)](https://square.github.io/okhttp/) - HTTP client for initial REST API handshakes and joining rooms.
-* [**Gson** (`com.google.code.gson:2.10.1`)](https://github.com/google/gson) - Serialization and deserialization of JSON web sockets payloads and DTOs.
+* [**Gson** (`com.google.code.gson:2.10.1`)](https://github.com/google/gson) - Serialization and deserialization of JSON WebSockets payloads and DTOs.
 * [**Quickie** (`io.github.g00fy2.quickie-bundled:1.6.0`)](https://github.com/G00fY2/quickie) - High-performance QR code scanning for joining quizzes.
 
 ## Architecture & app flow
