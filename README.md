@@ -2,6 +2,7 @@
   <img width="201" height="232" alt="Quizazu" src="https://github.com/user-attachments/assets/9fc465b9-da37-4954-9da7-b0cf8b38663c" />
   <h1>Quizazu | College quiz mobile app</h1><div align="center">
 
+
 ![Platform](https://img.shields.io/badge/Platform-Android-3DDC84?logo=android&logoColor=white)
 ![Min SDK](https://img.shields.io/badge/Min%20SDK-31-3DDC84?logo=android&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-11-ED8B00?logo=openjdk&logoColor=white)
