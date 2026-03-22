@@ -17,8 +17,8 @@ This repository houses the source code for the Java-based Android application. I
 
 ## Table of contents
 
-* [Features](#features)
 * [Gallery](#gallery)
+* [Features](#features)
 * [Built with](#built-with)
 * [Architecture & app flow](#architecture--app-flow)
 * [Prerequisites & setup](#prerequisites--setup)
