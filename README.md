@@ -48,7 +48,7 @@ This repository houses the source code for the Java-based Android application. I
 ## Features
 
 * **Secure authentication & auto-login:** Users log in via a REST API, utilizing JWT (JSON Web Tokens) to secure API calls and quiz room entries. The resulting token is securely stored locally to enable auto-login, bypassing the login screen on subsequent app launches.
-* **Real-time gameplay sync:** Powered by Microsoft SignalR for low-latency bidirectional communication. The app reacts instantly to server hubs like `onGame`, `onQuestionTimer`, `onCorrectAnswer`, and `onQuestionResult`.
+* **Real-time gameplay sync:** Powered by Microsoft SignalR for low-latency bidirectional communication. The app reacts instantly to server events (hub methods) such as `onGame`, `onQuestionTimer`, `onCorrectAnswer`, and `onQuestionResult`.
 * **Dynamic game modes:** The app dynamically renders native UI fragments based on the incoming question type. Supported modes include:
     * `SINGLE_FOUR_ANSWERS` (4 Options)
     * `MULTIPLE_FOUR_ANSWERS` (Multiple Choice)
@@ -69,9 +69,9 @@ This repository houses the source code for the Java-based Android application. I
 
 ### Third-party libraries
 
-* [**SignalR Client** (`com.microsoft.signalr:7.0.5`)](https://learn.microsoft.com/en-us/aspnet/core/signalr/java-client) - Full-duplex websocket communication for real-time game state updates.
+* [**SignalR Client** (`com.microsoft.signalr:7.0.5`)](https://learn.microsoft.com/en-us/aspnet/core/signalr/java-client) - Full-duplex WebSocket communication for real-time game state updates.
 * [**OkHttp3** (`com.squareup.okhttp3:okhttp:4.10.0`)](https://square.github.io/okhttp/) - HTTP client for initial REST API handshakes and joining rooms.
-* [**Gson** (`com.google.code.gson:2.10.1`)](https://github.com/google/gson) - Serialization and deserialization of JSON WebSockets payloads and DTOs.
+* [**Gson** (`com.google.code.gson:2.10.1`)](https://github.com/google/gson) - Serialization and deserialization of JSON WebSocket payloads and DTOs.
 * [**Quickie** (`io.github.g00fy2.quickie-bundled:1.6.0`)](https://github.com/G00fY2/quickie) - High-performance QR code scanning for joining quizzes.
 
 ## Architecture & app flow
@@ -79,10 +79,10 @@ This repository houses the source code for the Java-based Android application. I
 The application flow is broken down into modular, core activities:
 
 1. **`StartActivity`**: Displays a splash screen while the app initializes.
-2. **`MainActivity`**: Manages user authorization. It utilizes `MotionLayout` for UI state transitions during network calls and handles invalid credentials.
+2. **`MainActivity`**: Manages user authentication. It utilizes `MotionLayout` for UI state transitions during network calls and handles invalid credentials.
 3. **`MenuActivity`**: The main hub post-login. It hosts the `BottomNavigationView` to swap out main application fragments and manages the logout sequence.
 4. **`LobbyActivity`**: Connects to the specific quiz room using a JWT-secured OkHttp request, then spins up the SignalR hub connection. It maintains a live countdown until the host starts the game.
-5. **`Quiz_Activity`**: The core gameplay engine. It listens to websocket events and dynamically injects the appropriate UI Fragments (e.g., `FourAnswersFragment`, `TrueFalseFragment`, `SliderFragment`) into its frame layouts depending on the `QuizDto` payload.
+5. **`Quiz_Activity`**: The core gameplay engine. It listens to WebSocket events and dynamically injects the appropriate UI Fragments (e.g., `FourAnswersFragment`, `TrueFalseFragment`, `SliderFragment`) into its FrameLayout depending on the `QuizDto` payload.
 6. **`ResultActivity`**: Shows scorecards with point gains and streaks between questions or at the end of the quiz, using `ResultDto` data.
 
 ## Prerequisites & setup
